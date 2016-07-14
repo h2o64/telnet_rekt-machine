@@ -51,8 +51,8 @@ if {[regexp -nocase "wlan" $interface]} {
 	# - let the user specify its lovely port
 	if {[regexp -nocase "on" $state]} {
 		# Enable Ethernet
-		expect "{Administrator}=>";
-		send "eth device ifconfig intf=ethif1 state=enabled type=auto mtu=1526\r"; # Port 1
+		#expect "{Administrator}=>";
+		#send "eth device ifconfig intf=ethif1 state=enabled type=auto mtu=1526\r"; # Port 1
 		expect "{Administrator}=>";
 		send "eth device ifconfig intf=ethif2 state=enabled type=auto mtu=1526\r"; # Port 2
 		expect "{Administrator}=>";
@@ -64,8 +64,8 @@ if {[regexp -nocase "wlan" $interface]} {
 		puts "\r";
 	} elseif {[regexp -nocase "off" $state]} {
 		# Disable Ethernet
-		expect "{Administrator}=>";
-		send "eth device ifconfig intf=ethif1 state=disabled type=auto mtu=1526\r"; # Port 1
+		#expect "{Administrator}=>";
+		#send "eth device ifconfig intf=ethif1 state=disabled type=auto mtu=1526\r"; # Port 1
 		expect "{Administrator}=>";
 		send "eth device ifconfig intf=ethif2 state=disabled type=auto mtu=1526\r"; # Port 2
 		expect "{Administrator}=>";
