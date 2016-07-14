@@ -29,6 +29,12 @@ if {[regexp -nocase "wlan" $interface]} {
 		expect "{Administrator}=>";
 		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=80:22:75:aa:13:b7 permission=allow name=JULIEN-WLAN3\r"; # JULIEN-WLAN3
 		expect "{Administrator}=>";
+		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=02:0f:b5:53:43:fe permission=allow name=JULIEN-WLAN4\r"; # JULIEN-WLAN4
+		expect "{Administrator}=>";
+		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=02:0f:b5:e6:a7:d1 permission=allow name=JULIEN-WLAN5\r"; # JULIEN-WLAN5
+		expect "{Administrator}=>";
+		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=02:0f:b5:aa:13:b7 permission=allow name=JULIEN-WLAN6\r"; # JULIEN-WLAN6
+		expect "{Administrator}=>";
 		send "saveall\r";
 		puts "\r";
 	} elseif {[regexp -nocase "off" $state]} {
@@ -39,6 +45,12 @@ if {[regexp -nocase "wlan" $interface]} {
 		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=02:0f:b5:aa:13:b7 permission=deny name=JULIEN-WLAN2\r"; # JULIEN-WLAN2
 		expect "{Administrator}=>";
 		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=80:22:75:aa:13:b7 permission=deny name=JULIEN-WLAN3\r"; # JULIEN-WLAN3
+		expect "{Administrator}=>";
+		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=02:0f:b5:53:43:fe permission=deny name=JULIEN-WLAN4\r"; # JULIEN-WLAN4
+		expect "{Administrator}=>";
+		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=02:0f:b5:e6:a7:d1 permission=deny name=JULIEN-WLAN5\r"; # JULIEN-WLAN5
+		expect "{Administrator}=>";
+		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=02:0f:b5:aa:13:b7 permission=deny name=JULIEN-WLAN6\r"; # JULIEN-WLAN
 		expect "{Administrator}=>";
 		send "saveall\r";
 		puts "\r";
