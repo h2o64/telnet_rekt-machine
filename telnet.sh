@@ -35,6 +35,10 @@ if {[regexp -nocase "wlan" $interface]} {
 		expect "{Administrator}=>";
 		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=02:0f:b5:aa:13:b7 permission=allow name=JULIEN-WLAN6\r"; # JULIEN-WLAN6
 		expect "{Administrator}=>";
+		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=00:90:4c:7f:8f:b0 permission=allow name=JULIEN-WLAN7\r"; # JULIEN-WLAN7
+		expect "{Administrator}=>";
+		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=58:48:22:75:99:af permission=allow name=JULIEN-WLAN8\r"; # JULIEN-WLAN8
+		expect "{Administrator}=>";
 		send "saveall\r";
 		puts "\r";
 	} elseif {[regexp -nocase "off" $state]} {
@@ -50,7 +54,11 @@ if {[regexp -nocase "wlan" $interface]} {
 		expect "{Administrator}=>";
 		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=02:0f:b5:e6:a7:d1 permission=deny name=JULIEN-WLAN5\r"; # JULIEN-WLAN5
 		expect "{Administrator}=>";
-		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=02:0f:b5:aa:13:b7 permission=deny name=JULIEN-WLAN6\r"; # JULIEN-WLAN
+		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=02:0f:b5:aa:13:b7 permission=deny name=JULIEN-WLAN6\r"; # JULIEN-WLAN6
+		expect "{Administrator}=>";
+		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=00:90:4c:7f:8f:b0 permission=deny name=JULIEN-WLAN7\r"; # JULIEN-WLAN7
+		expect "{Administrator}=>";
+		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=58:48:22:75:99:af permission=deny name=JULIEN-WLAN8\r"; # JULIEN-WLAN8
 		expect "{Administrator}=>";
 		send "saveall\r";
 		puts "\r";
@@ -63,8 +71,8 @@ if {[regexp -nocase "wlan" $interface]} {
 	# - let the user specify its lovely port
 	if {[regexp -nocase "on" $state]} {
 		# Enable Ethernet
-		#expect "{Administrator}=>";
-		#send "eth device ifconfig intf=ethif1 state=enabled type=auto mtu=1526\r"; # Port 1
+		expect "{Administrator}=>";
+		send "eth device ifconfig intf=ethif1 state=enabled type=auto mtu=1526\r"; # Port 1
 		expect "{Administrator}=>";
 		send "eth device ifconfig intf=ethif2 state=enabled type=auto mtu=1526\r"; # Port 2
 		expect "{Administrator}=>";
@@ -76,8 +84,8 @@ if {[regexp -nocase "wlan" $interface]} {
 		puts "\r";
 	} elseif {[regexp -nocase "off" $state]} {
 		# Disable Ethernet
-		#expect "{Administrator}=>";
-		#send "eth device ifconfig intf=ethif1 state=disabled type=auto mtu=1526\r"; # Port 1
+		expect "{Administrator}=>";
+		send "eth device ifconfig intf=ethif1 state=disabled type=auto mtu=1526\r"; # Port 1
 		expect "{Administrator}=>";
 		send "eth device ifconfig intf=ethif2 state=disabled type=auto mtu=1526\r"; # Port 2
 		expect "{Administrator}=>";
