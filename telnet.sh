@@ -15,7 +15,16 @@ spawn telnet 192.168.1.254;
 expect "Username :";
 send "Administrator\r";
 expect "Password :";
-send "\r";
+
+# Grab the password
+stty -echo
+send_user -- "Password for Telnet: "
+expect_user -re "(.*)\n"
+send_user "\n"
+stty echo
+set pass $expect_out(1,string)
+send -- "$pass\r"
+
 puts "\r";
 
 # Modify configuration
