@@ -48,6 +48,8 @@ if {[regexp -nocase "wlan" $interface]} {
 		expect "{Administrator}=>";
 		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=58:48:22:75:99:af permission=allow name=JULIEN-WLAN8\r"; # JULIEN-WLAN8
 		expect "{Administrator}=>";
+		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=c8:3a:35:ca:67:14 permission=allow name=EMER-PC\r"; # EMER-PC
+		expect "{Administrator}=>";
 		send "saveall\r";
 		puts "\r";
 	} elseif {[regexp -nocase "off" $state]} {
@@ -68,6 +70,8 @@ if {[regexp -nocase "wlan" $interface]} {
 		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=00:90:4c:7f:8f:b0 permission=deny name=JULIEN-WLAN7\r"; # JULIEN-WLAN7
 		expect "{Administrator}=>";
 		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=58:48:22:75:99:af permission=deny name=JULIEN-WLAN8\r"; # JULIEN-WLAN8
+		expect "{Administrator}=>";
+		send "wireless macacl modify ssid_id=0 radio_id=0 hwaddr=c8:3a:35:ca:67:14 permission=deny name=EMER-PC\r"; # EMER-PC
 		expect "{Administrator}=>";
 		send "saveall\r";
 		puts "\r";
